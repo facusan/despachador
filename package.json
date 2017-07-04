@@ -1,0 +1,14 @@
+{
+  "name"         : "despachador",
+  "version"      : "0.0.0",
+  "description"  : "Despachador de ambulancias que implementa un motor de reglas.",
+  "main"         : "server.js",
+  "author"       : "Facundo De Falco y Facundo Sanchez Galindo",
+  "dependencies" : {
+    "express"    : "~4.7.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2",
+    "node-rules" : "~3.1.0"
+    }
+}
