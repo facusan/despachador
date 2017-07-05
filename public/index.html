@@ -30,17 +30,33 @@
             <h1>Despachador</h1>
         </div>
     <div id="todo-form">
-        <div class="col-sm-4 col-height" style="display: table-cell">
+        <div class="col-sm-8" >
             <div class="panel panel-default">
                 <div class="panel-body">                
-                    <ul class="list-group">
-                        <li ng-repeat="ambulancia in ambulancias" class="list-group-item">
-                           <p><b>{{ambulancia.nombre}}</b></p>
-                           <b>Distancia: </b> {{ambulancia.distancia}} km
-                           <b>Tiempo libre: </b> {{ambulancia.tiempoLibre}} min
-                           <b>Especialidad: </b> {{ambulancia.especialidad}}
-                        </li>
-                    </ul>
+                    <table class="table table">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Distancia</th>
+                            <th>Tiempo Libre</th>
+                            <th>Especialidad</th>
+                            <th>Hace Resp</th>
+                            <th>Equipo Ad</th>
+                            <th>Libre</th>
+                            <th>Tiempo Operativo</th>
+                            <th>Asignaciones</th>
+                        </tr>
+                        <tr ng-repeat="ambulancia in ambulancias">
+                           <td> {{ambulancia.nombre}} </td>
+                           <td> {{ambulancia.distancia}} km </td>
+                           <td> {{ambulancia.tiempoLibre}} min </td>
+                           <td> {{ambulancia.especialidad}}</td>
+                           <td> {{ambulancia.medicoRespirados}}</td>
+                           <td> {{ambulancia.equipoAdicional}}</td>
+                           <td> {{ambulancia.libre}} </td>
+                           <td> {{ambulancia.tiempoOperativo}} hs </td>
+                           <td> {{ambulancia.cantidadAsignaciones}} </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -58,7 +74,7 @@
                 </div>
                 <div class="form-group"> 
                     <label >Prestacion</label>
-                    <select class="form-control input text-center" placeholder="prestacion" ng-model="formData.prestacion">
+                    <select class="form-control input text-center" placeholder="prestacion" ng-model="formData.prestacionTipo">
                     <option>rojo</option>
                     <option>amarillo</option>
                     </select>
@@ -82,10 +98,10 @@
                     <label >Adicionales</label>
                     <input type="checkbox" class="checkbox" placeholder="necesidadAdicionales" ng-model="formData.necesidadAdicionales">
                 </div>
-                <div class="form-group"> 
+                <!--<div class="form-group"> 
                     <label >Preferencial</label>
                     <input type="checkbox" class="checkbox" placeholder="preferencial" ng-model="formData.preferencial">
-                </div>
+                </div>-->
             </form>
                 </div>
 

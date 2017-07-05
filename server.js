@@ -35,24 +35,30 @@ var ambulancias = [
         "nombre": "UTI01",
         "distancia": 0.52,  //km
         "tiempoLibre": 30, //min
-        "carga": true,
-        "especialidad": "adulto", //adulto-adultopediatrico-pediatrico
+        "carga": false,
+        "especialidad": "adulto-pediatrico", //adulto-adultopediatrico-pediatrico
         "equipoAdicional" : true,
         "cantidadAsignaciones": 3,
         "libre": true,
-        "ranking": 0
+        "ranking": 0,
+        "medicoRespirados":true,
+        "tiempoOperativo": 1 , //hr
+        "reglas": ""
     }
     ,
     { 
         "nombre": "UTI02",
         "distancia": 1.52,  //km
         "tiempoLibre": 30, //min
-        "carga": true,
-        "especialidad": "adulto-pediatrico", //adulto-adultopediatrico-pediatrico
-        "equipoAdicional" : true,
+        "carga": false,
+        "especialidad": "adulto", //adulto-adultopediatrico-pediatrico
+        "equipoAdicional" : false,
         "cantidadAsignaciones": 3,
         "libre": true,
-        "ranking": 0
+        "ranking": 0,
+        "medicoRespirados":false,
+        "tiempoOperativo": 3 , //hr
+        "reglas": ""
     }
       ,
     { 
@@ -60,22 +66,56 @@ var ambulancias = [
         "distancia": 0.54,  //km
         "tiempoLibre": 30, //min
         "carga": true,
-        "especialidad": "adulto-pediatrico", //adulto-adultopediatrico-pediatrico
-        "equipoAdicional" : true,
+        "especialidad": "pediatrico", //adulto-adultopediatrico-pediatrico
+        "equipoAdicional" : false,
         "cantidadAsignaciones": 3,
         "libre": true,
-        "ranking": 0
+        "ranking": 0,
+        "medicoRespirados":true,
+        "tiempoOperativo": 2, //hr
+        "reglas": ""
     } ,
     { 
         "nombre": "UTI04",
         "distancia": 5.54,  //km
         "tiempoLibre": 30, //min
         "carga": true,
-        "especialidad": "pediatrico", //adulto-adultopediatrico-pediatrico
-        "equipoAdicional" : true,
+        "especialidad": "adulto-pediatrico", //adulto-adultopediatrico-pediatrico
+        "equipoAdicional" : false,
         "cantidadAsignaciones": 3,
         "libre": true,
-        "ranking": 0
+        "ranking": 0,
+        "medicoRespirados":false,
+        "tiempoOperativo": 4 , //hr
+        "reglas": ""
+    },
+    { 
+        "nombre": "UTI05",
+        "distancia": 1.54,  //km
+        "tiempoLibre": 50, //min
+        "carga": true,
+        "especialidad": "pediatrico", //adulto-adultopediatrico-pediatrico
+        "equipoAdicional" : true,
+        "cantidadAsignaciones": 1,
+        "libre": true,
+        "ranking": 0,
+        "medicoRespirados":true,
+        "tiempoOperativo": 4, //hr
+        "reglas": ""
+    },
+    { 
+        "nombre": "UTI06",
+        "distancia": 0.52,  //km
+        "tiempoLibre": 30, //min
+        "carga": false,
+        "especialidad": "adulto", //adulto-adultopediatrico-pediatrico
+        "equipoAdicional" : false,
+        "cantidadAsignaciones": 3,
+        "libre": true,
+        "ranking": 0,
+        "medicoRespirados":false,
+        "tiempoOperativo": 3 , //hr
+        "reglas": ""
     }
 ];
 // order
@@ -100,19 +140,22 @@ function mycomparator(a,b) {
         //R.register(rules);
         var aux = 0;
         //Now pass the pedido on to the rule engine for results
-            for (var i = 0; i < fact.ambulancias.length; i++) {
+        for (var i = 0; i < fact.ambulancias.length; i++) {
             var input = {"pedido": fact.pedido ,"ambulancia" : fact.ambulancias[i]};
             
             R.execute(input,function(result){ 
                 fact.ambulancias[aux].ranking =  result.ambulancia.ranking;
                 aux++;
                 if(aux == fact.ambulancias.length){
+                    
                     console.log(fact.ambulancias.sort(mycomparator));
-                    res.json(fact.ambulancias.sort(mycomparator)[fact.ambulancias.length -1]);
+                    res.json(fact.ambulancias[fact.ambulancias.length -1]);
+                    for (var j = 0; j < fact.ambulancias.length; j++) {
+                        ambulancias[j].ranking =0;
+                    }
                 }
             });
         }
-        
     });
 
    // application -------------------------------------------------------------
