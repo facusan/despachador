@@ -93,8 +93,7 @@ module.exports =
 },
 {
 	"condition": function(R) {
-		R.when(this && (this.pedido.sintoma == 'leve' && this.pedido.edadPaciente == this.ambulancia.especialidad 
-        && this.ambulancia.especialidad == 'adulto-pediatrico'));
+		R.when(this && (this.pedido.sintoma == 'leve' && this.pedido.edadPaciente == this.ambulancia.especialidad ));
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 3; 
@@ -104,8 +103,8 @@ module.exports =
 },
 {
 	"condition": function(R) {
-		R.when(this && (this.pedido.sintoma == 'leve' && this.pedido.edadPaciente == this.ambulancia.especialidad 
-        && this.ambulancia.especialidad != 'adulto-pediatrico'));
+		R.when(this && (this.pedido.sintoma == 'leve'  
+        && this.ambulancia.especialidad == 'adulto-pediatrico'));
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 2; 
@@ -115,22 +114,11 @@ module.exports =
 },
 {
 	"condition": function(R) {
-		R.when(this && (this.pedido.sintoma == 'leve' && this.pedido.edadPaciente == this.ambulancia.especialidad 
-        && this.ambulancia.especialidad != 'adulto-pediatrico'));
-	},
-	"consequence": function(R) {
-		this.ambulancia.ranking += 2; 
-		this.ambulancia.reglas += "R11"
-		R.next();
-	}
-},
-{
-	"condition": function(R) {
 		R.when(this && (this.pedido.prestacionTipo == 'rojo' && this.ambulancia.distancia < 1));  
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 30;
-		this.ambulancia.reglas += "R12" 
+		this.ambulancia.reglas += "R11" 
 		R.next();
 	}
 },
@@ -140,7 +128,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R13" 
+		this.ambulancia.reglas += "R12" 
 		R.next();
 	}
 },
@@ -150,7 +138,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R14" 
+		this.ambulancia.reglas += "R13" 
 		R.next();
 	}
 },
@@ -161,7 +149,7 @@ module.exports =
 	"consequence": function(R) {
 		console.log("1");
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R15" 
+		this.ambulancia.reglas += "R14" 
 		R.next();
 	}
 }   ,
@@ -172,7 +160,7 @@ module.exports =
 	"consequence": function(R) {
 		console.log(this.ambulancia.ranking);
 		this.ambulancia.ranking += 20; 
-		this.ambulancia.reglas += "R16"
+		this.ambulancia.reglas += "R15"
 		console.log(this.ambulancia.ranking);
 		R.next();
 	}
@@ -183,7 +171,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 5;
-		this.ambulancia.reglas += "R17"
+		this.ambulancia.reglas += "R16"
 		console.log("5"); 
 		R.next();
 	}
@@ -195,7 +183,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 30;
-		this.ambulancia.reglas += "R18" 
+		this.ambulancia.reglas += "R17" 
 		R.next();
 	}
 },
@@ -206,7 +194,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R19"; 
+		this.ambulancia.reglas += "R18"; 
 		R.next();
 	}
 },
@@ -217,7 +205,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10; 
-		this.ambulancia.reglas += "R20";
+		this.ambulancia.reglas += "R19";
 		R.next();
 	}
 },
@@ -227,7 +215,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R21"; 
+		this.ambulancia.reglas += "R20"; 
 		R.next();
 	}
 },
@@ -237,7 +225,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking -= 15;
-		this.ambulancia.reglas += "R22"; 
+		this.ambulancia.reglas += "R21"; 
 		R.next();
 	}
 },
@@ -247,7 +235,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 15;
-		this.ambulancia.reglas += "R23"; 
+		this.ambulancia.reglas += "R22"; 
 		R.next();
 	}
 },
@@ -258,7 +246,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 8; 
-		this.ambulancia.reglas += "R24";
+		this.ambulancia.reglas += "R23";
 		R.next();
 	}
 },
@@ -268,7 +256,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 5; 
-		this.ambulancia.reglas += "R25";
+		this.ambulancia.reglas += "R24";
 		R.next();
 	}
 },
@@ -278,7 +266,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R26"; 
+		this.ambulancia.reglas += "R25"; 
 		R.next();
 	}
 },
@@ -288,7 +276,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20; 
-		this.ambulancia.reglas += "R27";
+		this.ambulancia.reglas += "R26";
 		R.next();
 	}
 }];
