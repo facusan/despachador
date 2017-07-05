@@ -3,43 +3,14 @@
 
 module.exports = 
  [
-// 	 {
-// 	"condition": function(R) {
-// 		R.when(this && (this.ambulancia.distancia < 1));
-// 	},
-// 	"consequence": function(R) {
-// 		this.ambulancia.ranking += 30;
-// 		this.ambulancia.reglas += "R1" 
-// 		R.next();
-// 	}
-// },
-// {
-// 	"condition": function(R) {
-// 		R.when(this && (this.ambulancia.distancia >= 1) && (this.ambulancia.distancia <= 3));
-// 	},
-// 	"consequence": function(R) {
-// 		this.ambulancia.ranking += 20;
-// 		this.ambulancia.reglas += "R2" 
-// 		R.next();
-// 	}
-// },
-// {
-// 	"condition": function(R) {
-// 		R.when(this && (this.ambulancia.distancia > 3) && (this.ambulancia.distancia <= 5));
-// 	},
-// 	"consequence": function(R) {
-// 		this.ambulancia.ranking += 10;
-// 		this.ambulancia.reglas += "R3" 
-// 		R.next();
-// 	}
-// },
+
 {
 	"condition": function(R) {
 		R.when(this && (this.ambulancia.especialidad == this.pedido.edadPaciente));
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R4" 
+		this.ambulancia.reglas += "R1" 
 		R.next();
 	}
 },
@@ -49,7 +20,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 7;
-		this.ambulancia.reglas += "R5" 
+		this.ambulancia.reglas += "R2" 
 		R.next();
 	}
 },
@@ -60,7 +31,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R6" 
+		this.ambulancia.reglas += "R3" 
 		R.next();
 	}
 },
@@ -72,7 +43,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 15;
-		this.ambulancia.reglas += "R7" 
+		this.ambulancia.reglas += "R4" 
 		R.next();
 	}
 },
@@ -84,7 +55,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 12;
-		this.ambulancia.reglas += "R8" 
+		this.ambulancia.reglas += "R5" 
 		R.next();
 	}
 },
@@ -94,7 +65,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R9" 
+		this.ambulancia.reglas += "R6" 
 		R.next();
 	}
 },
@@ -105,7 +76,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 8;
-		this.ambulancia.reglas += "R10" 
+		this.ambulancia.reglas += "R7" 
 		R.next();
 	}
 },
@@ -116,7 +87,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 5; 
-		this.ambulancia.reglas += "R11"
+		this.ambulancia.reglas += "R8"
 		R.next();
 	}
 },
@@ -127,7 +98,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 3; 
-		this.ambulancia.reglas += "R12"
+		this.ambulancia.reglas += "R9"
 		R.next();
 	}
 },
@@ -138,7 +109,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 2; 
-		this.ambulancia.reglas += "R13"
+		this.ambulancia.reglas += "R10"
 		R.next();
 	}
 },
@@ -149,7 +120,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 2; 
-		this.ambulancia.reglas += "R14"
+		this.ambulancia.reglas += "R11"
 		R.next();
 	}
 },
@@ -159,7 +130,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 30;
-		this.ambulancia.reglas += "R15" 
+		this.ambulancia.reglas += "R12" 
 		R.next();
 	}
 },
@@ -169,7 +140,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R16" 
+		this.ambulancia.reglas += "R13" 
 		R.next();
 	}
 },
@@ -179,7 +150,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R17" 
+		this.ambulancia.reglas += "R14" 
 		R.next();
 	}
 },
@@ -190,7 +161,7 @@ module.exports =
 	"consequence": function(R) {
 		console.log("1");
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R18" 
+		this.ambulancia.reglas += "R15" 
 		R.next();
 	}
 }   ,
@@ -201,7 +172,7 @@ module.exports =
 	"consequence": function(R) {
 		console.log(this.ambulancia.ranking);
 		this.ambulancia.ranking += 20; 
-		this.ambulancia.reglas += "R19"
+		this.ambulancia.reglas += "R16"
 		console.log(this.ambulancia.ranking);
 		R.next();
 	}
@@ -212,7 +183,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 5;
-		this.ambulancia.reglas += "R20"
+		this.ambulancia.reglas += "R17"
 		console.log("5"); 
 		R.next();
 	}
@@ -224,7 +195,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 30;
-		this.ambulancia.reglas += "R21" 
+		this.ambulancia.reglas += "R18" 
 		R.next();
 	}
 },
@@ -235,7 +206,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20;
-		this.ambulancia.reglas += "R22"; 
+		this.ambulancia.reglas += "R19"; 
 		R.next();
 	}
 },
@@ -246,7 +217,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10; 
-		this.ambulancia.reglas += "R23";
+		this.ambulancia.reglas += "R20";
 		R.next();
 	}
 },
@@ -256,7 +227,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R24"; 
+		this.ambulancia.reglas += "R21"; 
 		R.next();
 	}
 },
@@ -266,7 +237,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking -= 15;
-		this.ambulancia.reglas += "R25"; 
+		this.ambulancia.reglas += "R22"; 
 		R.next();
 	}
 },
@@ -276,7 +247,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 15;
-		this.ambulancia.reglas += "R26"; 
+		this.ambulancia.reglas += "R23"; 
 		R.next();
 	}
 },
@@ -287,7 +258,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 8; 
-		this.ambulancia.reglas += "R27";
+		this.ambulancia.reglas += "R24";
 		R.next();
 	}
 },
@@ -297,7 +268,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 5; 
-		this.ambulancia.reglas += "R28";
+		this.ambulancia.reglas += "R25";
 		R.next();
 	}
 },
@@ -307,7 +278,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 10;
-		this.ambulancia.reglas += "R29"; 
+		this.ambulancia.reglas += "R26"; 
 		R.next();
 	}
 },
@@ -317,7 +288,7 @@ module.exports =
 	},
 	"consequence": function(R) {
 		this.ambulancia.ranking += 20; 
-		this.ambulancia.reglas += "R30";
+		this.ambulancia.reglas += "R27";
 		R.next();
 	}
 }];
