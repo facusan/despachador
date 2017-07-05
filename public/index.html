@@ -25,15 +25,16 @@
 
 </head>
 <body ng-controller="mainController">
-    <div class="container">
+    <div class="container fluid">
         <div class="jumbotron text-center">
             <h1>Despachador</h1>
         </div>
     <div id="todo-form" class="row">
         <div class="col-sm-8" >
             <div class="panel panel-default">
-                <div class="panel-body">                
-                    <table class="table table">
+                <div class="panel-body">              
+                    <div class="table-responsive">  
+                    <table class="table table-bordered">
                         <tr>
                             <th>Nombre</th>
                             <th>Distancia</th>
@@ -57,6 +58,7 @@
                            <td> {{ambulancia.cantidadAsignaciones}} </td>
                         </tr>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,10 +110,10 @@
 
             </div>
         </div>
-        <div class="col-sm-2 ">
-            <div class="panel panel-default" style="display: table-cell">
+        <div class="col-sm-2">
+            <div class="panel panel-default">
                 <div class="panel-body">                
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="runRules()">Despachar</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="runRules()">Despachar</button>
                 
                 </div>
                 
