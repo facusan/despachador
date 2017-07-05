@@ -29,7 +29,7 @@
         <div class="jumbotron text-center">
             <h1>Despachador</h1>
         </div>
-    <div id="todo-form">
+    <div id="todo-form" class="row">
         <div class="col-sm-8" >
             <div class="panel panel-default">
                 <div class="panel-body">                
@@ -94,9 +94,10 @@
                     <option>pediatrico</option>
                     </select>
                 </div>
-                <div class="form-group"> 
-                    <label >Adicionales</label>
+                <div> 
+                    <label >Adicionales
                     <input type="checkbox" class="checkbox" placeholder="necesidadAdicionales" ng-model="formData.necesidadAdicionales">
+                    </label>
                 </div>
                 <!--<div class="form-group"> 
                     <label >Preferencial</label>
@@ -110,18 +111,17 @@
         <div class="col-sm-2 ">
             <div class="panel panel-default" style="display: table-cell">
                 <div class="panel-body">                
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="runRules()">Run rules</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="runRules()">Despachar</button>
+                
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <label ng-bind="resultado">{{resultado}}</label>
-                </div>                
+                
             </div>
         </div>
     </div>
+    <div class="alert alert-success">
+                    El movil a despachar es:
+                 <label ng-bind="resultado">{{resultado}}</label>
+                </div>
     </div>
 </body>
 </html>
